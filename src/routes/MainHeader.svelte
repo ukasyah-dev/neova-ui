@@ -18,4 +18,4 @@
 	</Container>
 </div>
 
-<div class="pb-20" />
+<div class="pb-24" />
