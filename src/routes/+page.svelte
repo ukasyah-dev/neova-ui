@@ -1,3 +1,21 @@
-<h1>Welcome to your library project</h1>
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import { Button, Container } from '$lib';
+	import MainHeader from './MainHeader.svelte';
+</script>
+
+<MainHeader />
+
+<Container>
+	<div class="py-32 text-center">
+		<h1 class="text-4xl font-semibold mb-3">Develop Svelte Apps Faster</h1>
+		<p class="dimmed text-lg max-w-lg mx-auto mb-6">
+			Simplify your web development with this comprehensive library of versatile and responsive
+			Svelte UI components.
+		</p>
+
+		<div class="flex justify-center gap-3">
+			<Button href="/" variant="primary">Get started</Button>
+			<Button href="/">Browse examples</Button>
+		</div>
+	</div>
+</Container>
