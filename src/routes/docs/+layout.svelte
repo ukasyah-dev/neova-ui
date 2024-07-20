@@ -6,11 +6,11 @@
 
 <MainHeader />
 
-<Container class="flex gap-10">
-	<div class="w-56">
+<Container class="pb-14">
+	<div class="w-48 fixed top-24">
 		<DocsSidebar />
 	</div>
-	<div class="flex-1 prose prose-neutral max-w-2xl dark:prose-invert">
+	<div class="ml-56 pl-9 prose prose-neutral max-w-2xl dark:prose-invert">
 		<slot />
 	</div>
 </Container>

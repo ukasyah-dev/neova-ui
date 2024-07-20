@@ -2,7 +2,7 @@
 	import { Container } from '$lib';
 </script>
 
-<div class="fixed top-0 inset-x-0 z-10">
+<div class="fixed top-0 inset-x-0 z-10 dark:bg-neutral-900">
 	<Container>
 		<div class="flex items-center justify-between h-16">
 			<a href="/" class="text-lg font-semibold">Neova UI</a>

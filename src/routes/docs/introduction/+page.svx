@@ -1,3 +1,4 @@
 # Introduction
 
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore esse dolore nobis maxime ratione iure, ipsam ipsa perspiciatis reiciendis optio laboriosam natus corrupti sed blanditiis eveniet magnam iste quidem nesciunt?
+Welcome to Neova UI, a Svelte UI library designed to simplify your web development.
+It offers a collection of customizable, performance-optimized components that integrate seamlessly with Svelte applications.

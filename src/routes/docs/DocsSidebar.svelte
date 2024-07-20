@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import { Button } from '$lib';
+
 	const groupedItems = [
 		{
 			title: 'General',
@@ -19,10 +22,18 @@
 <div class="flex flex-col gap-9">
 	{#each groupedItems as groupedItem}
 		<div>
-			<h3 class="text-xs font-medium dimmed uppercase mb-3.5">{groupedItem.title}</h3>
-			<div class="flex flex-col gap-3.5">
+			<h3 class="text-xs font-medium dimmed uppercase mb-3">{groupedItem.title}</h3>
+			<div class="flex flex-col gap-1 -mx-2.5">
 				{#each groupedItem.items as item}
-					<a href={item.href} class="text-sm font-medium">{item.title}</a>
+					<Button
+						href={item.href}
+						class="px-2.5 h-9"
+						size="sm"
+						active={$page.url.pathname === item.href}
+						variant="transparent"
+					>
+						{item.title}
+					</Button>
 				{/each}
 			</div>
 		</div>

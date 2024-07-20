@@ -1,1 +1,62 @@
 # Getting Started
+
+This library expects you have setup a SvelteKit project. Here's how to do so:
+
+```bash
+pnpm create svelte my-project
+cd my-project
+pnpm install
+```
+
+You also need to install TailwindCSS.
+
+```bash
+pnpm add -D tailwindcss postcss autoprefixer
+pnpm tailwindcss init -p
+```
+
+Let's continue by installing the library.
+
+```bash
+pnpm add -D @ukasyah-dev/neova-ui
+```
+
+Update `tailwind.config.js` file:
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    './src/**/*.{html,js,svelte,ts}',
+    './node_modules/@ukasyah-dev/neova-ui/**/*.{js,svelte}'
+  ],
+  theme: {
+    extend: {}
+  },
+  plugins: [],
+  presets: [require('@ukasyah-dev/neova-ui/preset.cjs')]
+};
+```
+
+Update `src/+layout.svelte` file:
+
+```svelte
+<script>
+  import { Provider } from '@ukasyah-dev/neova-ui';
+  import '@ukasyah-dev/neova-ui/styles.css';
+</script>
+
+<Provider>
+  <slot />
+</Provider>
+```
+
+That's it. Now, you can start using the components like this:
+
+```svelte
+<script>
+  import { Button } from '@ukasyah-dev/neova-ui';
+</script>
+
+<Button>Hello Button</Button>
+```
