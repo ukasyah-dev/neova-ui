@@ -4,5 +4,6 @@ export default {
 	theme: {
 		extend: {}
 	},
-	plugins: []
+	plugins: [],
+	presets: [require('./src/lib/preset.cjs')]
 };
