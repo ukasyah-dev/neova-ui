@@ -7,12 +7,14 @@
 		href?: string;
 		size?: 'sm' | 'md';
 		variant?: 'default' | 'primary' | 'transparent';
+		onClick?: () => void;
 	};
 
 	export let active: $$Props['active'] = false;
 	export let href: $$Props['href'] = '';
 	export let size: $$Props['size'] = 'md';
 	export let variant: $$Props['variant'] = 'default';
+	export let onClick: $$Props['onClick'] = undefined;
 
 	const { class: className, ...rest } = $$restProps;
 
@@ -36,7 +38,7 @@
 		<slot />
 	</a>
 {:else}
-	<button class={_class} {...rest}>
+	<button class={_class} on:click={onClick} {...rest}>
 		<slot />
 	</button>
 {/if}

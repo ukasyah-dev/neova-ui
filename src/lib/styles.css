@@ -14,6 +14,10 @@
 	}
 
 	.dimmed {
-		@apply dark:text-neutral-300/80;
+		@apply dark:stroke-neutral-300/80 dark:text-neutral-300/80;
 	}
+}
+
+.dark {
+	color-scheme: dark;
 }

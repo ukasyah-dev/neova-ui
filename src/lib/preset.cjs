@@ -40,7 +40,7 @@ module.exports = {
 							margin: '1.5rem 0 !important'
 						},
 						'pre code': {
-							fontSize: theme('fontSize.sm'),
+							fontSize: '0.935rem',
 							lineHeight: theme('lineHeight.relaxed') + ' !important'
 						}
 					}
