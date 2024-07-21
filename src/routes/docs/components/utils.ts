@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { capitalCase, kebabCase, pascalCase } from 'change-case';
+import { sentenceCase, kebabCase, pascalCase } from 'change-case';
 import type { SvelteComponent } from 'svelte';
 
 export type ComponentFile = {
@@ -24,7 +24,7 @@ export const getComponentGroups = async (): Promise<ComponentGroup[]> => {
 	for (const [path, resolver] of Object.entries(modules)) {
 		const segments = path.split('/');
 		const groupSlug = segments[segments.length - 2];
-		const groupName = capitalCase(groupSlug);
+		const groupName = sentenceCase(groupSlug);
 		const componentSlug = kebabCase(segments[segments.length - 1].replace('.d.svx', ''));
 		const componentName = pascalCase(componentSlug);
 

@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import { Icon, ChevronDown } from 'svelte-hero-icons';
 	import { twJoin, twMerge } from 'tailwind-merge';
 	import Button from './Button.svelte';
-	import { Icon, ChevronDown } from 'svelte-hero-icons';
 
 	type $$Props = {
 		title: string;
@@ -16,6 +17,9 @@
 	export let items: $$Props['items'] = [];
 	export let buttonClassName: $$Props['buttonClassName'] = '';
 	export let itemClassName: $$Props['itemClassName'] = '';
+
+	$: hasActiveItem = items.some((item) => $page.url.pathname === item.href);
+	$: if (!open && hasActiveItem) open = true;
 </script>
 
 <Button
@@ -39,6 +43,7 @@
 				<Button
 					href={item.href}
 					size="sm"
+					active={Boolean(item.href) && $page.url.pathname === item.href}
 					variant="transparent"
 					class={twMerge('w-full', itemClassName)}
 				>
