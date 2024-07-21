@@ -1,1 +1,28 @@
+<script>
+  import { Input, Preview } from '$lib';
+</script>
+
 # Input
+
+Allows users to enter and edit a single-line text.
+
+<Preview>
+  <Input placeholder="Default input" />
+  <Input hasError placeholder="This one has an error" />
+  <Input placeholder="Small input" size="sm" />
+</Preview>
+
+```svelte
+<Input placeholder="Default input" />
+<Input hasError placeholder="This one has an error" />
+<Input placeholder="Small input" size="sm" />
+```
+
+## Properties
+
+This component extends `HTMLInputAttributes` with these additional properties:
+
+| Name     | Type    | Description |
+|----------|---------|-------------|
+| hasError | boolean | Whether the input has invalid value. |
+| size     | enum    | The input size. Available options: `sm` and `md`. |

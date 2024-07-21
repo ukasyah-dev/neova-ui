@@ -1,0 +1,19 @@
+<script>
+  import { Preview, Link } from '$lib';
+</script>
+
+# Link
+
+Allows users to move between different pages.
+
+<Preview>
+  <Link href="/">Go to home page</Link>
+</Preview>
+
+```svelte
+<Link href="/">Go to home page</Link>
+```
+
+## Properties
+
+This component extends `HTMLAnchorAttributes`.
