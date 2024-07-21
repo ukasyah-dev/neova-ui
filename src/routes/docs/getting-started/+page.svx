@@ -42,13 +42,13 @@ Update `src/+layout.svelte` file:
 
 ```svelte
 <script>
-  import { Provider } from '@ukasyah-dev/neova-ui';
+  import { NeovaProvider } from '@ukasyah-dev/neova-ui';
   import '@ukasyah-dev/neova-ui/styles.css';
 </script>
 
-<Provider>
+<NeovaProvider>
   <slot />
-</Provider>
+</NeovaProvider>
 ```
 
 That's it. Now, you can start using the components like this:
