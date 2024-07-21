@@ -13,7 +13,7 @@
 	<div class="w-[12.75rem] fixed top-24 bottom-0 overflow-y-auto">
 		<DocsSidebar componentGroups={data.componentGroups} />
 	</div>
-	<div class="ml-56 pl-11 prose prose-neutral max-w-3xl dark:prose-invert">
+	<div class="ml-56 pl-12 prose prose-neutral max-w-3xl dark:prose-invert">
 		<slot />
 	</div>
 </Container>

@@ -1,3 +1,33 @@
+<script>
+  import { Button, Preview } from '$lib';
+</script>
+
 # Button
 
-This is the Button documentation.
+Allows users to trigger actions, navigate through the app, or submit forms.
+
+<Preview>
+  <Button>Default button</Button>
+  <Button variant="primary">Primary button</Button>
+  <Button variant="secondary">Secondary button</Button>
+  <Button variant="transparent">Transparent button</Button>
+  <Button size="sm">Small button</Button>
+</Preview>
+
+```svelte
+<Button>Default button</Button>
+<Button variant="primary">Primary button</Button>
+<Button variant="transparent">Transparent button</Button>
+<Button variant="secondary">Secondary button</Button>
+<Button size="sm">Small button</Button>
+```
+
+## Properties
+
+This component extends `HTMLButtonAttributes` with these additional properties:
+
+| Name    | Type     | Description |
+|---------|----------|-------------|
+| href    | string   | Navigates to the given URL when clicked. |
+| size    | enum     | The button size. Available options: `sm` and `md`. |
+| variant | enum     | The button visual style. Available options: `default`, `primary`, `secondary` and `transparent`. |

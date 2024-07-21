@@ -25,8 +25,8 @@
 <Button
 	size="sm"
 	variant="transparent"
-	onClick={() => (open = !open)}
 	class={twMerge('w-full', buttonClassName)}
+	on:click={() => (open = !open)}
 >
 	{title}
 
@@ -39,12 +39,12 @@
 	<div class="relative pl-6">
 		<div class="absolute left-4 w-[1px] inset-y-0 dark:bg-neutral-700/80" />
 		{#each items as item}
+			{@const active = Boolean(item.href) && $page.url.pathname === item.href}
 			<div class="flex items-stretch justify-stretch gap-3">
 				<Button
 					href={item.href}
 					size="sm"
-					active={Boolean(item.href) && $page.url.pathname === item.href}
-					variant="transparent"
+					variant={active ? 'secondary' : 'transparent'}
 					class={twMerge('w-full', itemClassName)}
 				>
 					{item.title}

@@ -69,6 +69,7 @@
 			<h3 class="text-xs font-medium dimmed uppercase mb-3">{groupedItem.title}</h3>
 			<div class="flex flex-col gap-1 -mx-2.5">
 				{#each groupedItem.items as item}
+					{@const active = Boolean(item.href) && $page.url.pathname === item.href}
 					{#if item.items}
 						<CollapsibleMenu
 							title={item.title}
@@ -81,8 +82,7 @@
 							href={item.href}
 							class="px-2.5 h-9"
 							size="sm"
-							active={$page.url.pathname === item.href}
-							variant="transparent"
+							variant={active ? 'secondary' : 'transparent'}
 						>
 							{item.title}
 						</Button>

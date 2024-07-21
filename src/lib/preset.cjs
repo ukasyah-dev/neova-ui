@@ -6,8 +6,8 @@ module.exports = {
 		extend: {
 			colors: {
 				neutral: {
-					800: 'rgb(40, 40, 40)',
-					900: 'rgb(30, 30, 30)'
+					800: 'rgb(39, 39, 39)',
+					900: 'rgb(29, 29, 29)'
 				}
 			},
 			fontFamily: {
@@ -24,6 +24,10 @@ module.exports = {
 							fontSize: theme('fontSize.3xl'),
 							marginBottom: theme('spacing.5')
 						},
+						h2: {
+							fontSize: theme('fontSize.2xl'),
+							marginBottom: theme('spacing.5')
+						},
 						p: {
 							fontSize: theme('fontSize.base')
 						},
@@ -37,11 +41,25 @@ module.exports = {
 						pre: {
 							backgroundColor: theme('colors.neutral.800') + ' !important',
 							padding: '1rem 1.25rem !important',
-							margin: '1.5rem 0 !important'
+							margin: '1.35rem 0 !important'
 						},
 						'pre code': {
-							fontSize: '0.935rem',
+							fontSize: '0.935rem !important',
 							lineHeight: theme('lineHeight.relaxed') + ' !important'
+						},
+						th: {
+							fontWeight: theme('fontWeight.medium'),
+							textAlign: 'left'
+						},
+						'.dark .prose th': {
+							color: theme('colors.neutral.400')
+						},
+						'th, td': {
+							fontSize: '0.95rem',
+							padding: theme('spacing[2.5]')
+						},
+						'td:not(:last-child)': {
+							paddingRight: theme('spacing.7')
 						}
 					}
 				}
