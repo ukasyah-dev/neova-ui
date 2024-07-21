@@ -8,7 +8,7 @@
 			<a href="/" class="text-lg font-semibold">Neova UI</a>
 
 			<div class="flex items-center gap-8">
-				<a href="/" class="dimmed text-sm font-medium">Docs</a>
+				<a href="/docs/introduction" class="dimmed text-sm font-medium">Docs</a>
 				<a href="/" class="dimmed text-sm font-medium">Components</a>
 				<a href="/" class="dimmed text-sm font-medium">Examples</a>
 				<a href="/" class="dimmed text-sm font-medium">About</a>

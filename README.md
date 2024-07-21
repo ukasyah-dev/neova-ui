@@ -1,58 +1,66 @@
-# create-svelte
+# Neova UI
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+A Svelte UI library designed to simplify your web development. It offers a collection of customizable, performance-optimized components that integrate seamlessly with Svelte applications.
 
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
+## Getting Started
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+This library expects you have setup a SvelteKit project. Here's how to do so:
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+pnpm create svelte my-project
+cd my-project
+pnpm install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+You also need to install TailwindCSS.
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm add -D tailwindcss postcss autoprefixer
+pnpm tailwindcss init -p
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
-
-## Building
-
-To build your library:
+Let's continue by installing the library.
 
 ```bash
-npm run package
+pnpm add -D neova-ui
 ```
 
-To create a production version of your showcase app:
+Update `tailwind.config.js` file:
 
-```bash
-npm run build
+```javascript
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    './src/**/*.{html,js,svelte,ts}',
+    './node_modules/neova-ui/dist/**/*.{js,svelte}'
+  ],
+  theme: {
+    extend: {}
+  },
+  plugins: [],
+  presets: [require('neova-ui/preset.cjs')]
+};
 ```
 
-You can preview the production build with `npm run preview`.
+Update `src/+layout.svelte` file:
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```svelte
+<script>
+  import { NeovaProvider } from 'neova-ui';
+  import 'neova-ui/styles.css';
+</script>
 
-## Publishing
+<NeovaProvider>
+  <slot />
+</NeovaProvider>
+```
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
+That's it. Now, you can start using the components like this:
 
-To publish your library to [npm](https://www.npmjs.com):
+```svelte
+<script>
+  import { Button } from 'neova-ui';
+</script>
 
-```bash
-npm publish
+<Button>Hello Button</Button>
 ```

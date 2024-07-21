@@ -18,7 +18,7 @@ pnpm tailwindcss init -p
 Let's continue by installing the library.
 
 ```bash
-pnpm add -D @ukasyah-dev/neova-ui
+pnpm add -D neova-ui
 ```
 
 Update `tailwind.config.js` file:
@@ -28,13 +28,13 @@ Update `tailwind.config.js` file:
 export default {
   content: [
     './src/**/*.{html,js,svelte,ts}',
-    './node_modules/@ukasyah-dev/neova-ui/**/*.{js,svelte}'
+    './node_modules/neova-ui/dist/**/*.{js,svelte}'
   ],
   theme: {
     extend: {}
   },
   plugins: [],
-  presets: [require('@ukasyah-dev/neova-ui/preset.cjs')]
+  presets: [require('neova-ui/preset.cjs')]
 };
 ```
 
@@ -42,8 +42,8 @@ Update `src/+layout.svelte` file:
 
 ```svelte
 <script>
-  import { NeovaProvider } from '@ukasyah-dev/neova-ui';
-  import '@ukasyah-dev/neova-ui/styles.css';
+  import { NeovaProvider } from 'neova-ui';
+  import 'neova-ui/styles.css';
 </script>
 
 <NeovaProvider>
@@ -55,7 +55,7 @@ That's it. Now, you can start using the components like this:
 
 ```svelte
 <script>
-  import { Button } from '@ukasyah-dev/neova-ui';
+  import { Button } from 'neova-ui';
 </script>
 
 <Button>Hello Button</Button>

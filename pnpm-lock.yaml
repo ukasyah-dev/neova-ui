@@ -11,6 +11,9 @@ importers:
       '@tailwindcss/typography':
         specifier: ^0.5.13
         version: 0.5.13(tailwindcss@3.4.6)
+      svelte-hero-icons:
+        specifier: ^5.2.0
+        version: 5.2.0(svelte@4.2.18)
       tailwind-merge:
         specifier: ^2.4.0
         version: 2.4.0
@@ -69,9 +72,6 @@ importers:
       svelte-check:
         specifier: ^3.6.0
         version: 3.8.4(postcss-load-config@4.0.2(postcss@8.4.39))(postcss@8.4.39)(svelte@4.2.18)
-      svelte-hero-icons:
-        specifier: ^5.2.0
-        version: 5.2.0(svelte@4.2.18)
       tailwindcss:
         specifier: ^3.4.6
         version: 3.4.6
