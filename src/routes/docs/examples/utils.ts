@@ -10,32 +10,32 @@ export type ExampleResolver = () => Promise<ExampleIndexFile>;
 
 export type Example = { name: string; slug: string; resolver: ExampleResolver };
 
-export type Category = {
+export type ExampleGroup = {
 	name: string;
 	slug: string;
 	examples: Example[];
 };
 
-export const getCategories = async (): Promise<Category[]> => {
+export const getExampleGroups = async (): Promise<ExampleGroup[]> => {
 	const modules = import.meta.glob('/src/examples/**/index.svelte');
 
-	let categories: Record<string, Category> = {};
+	let exampleGroups: Record<string, ExampleGroup> = {};
 
 	for (const [path, resolver] of Object.entries(modules)) {
 		const segments = path.split('/');
-		const category = segments[segments.length - 3];
+		const exampleGroup = segments[segments.length - 3];
 		const example = kebabCase(segments[segments.length - 2]);
 
-		if (category in categories) {
-			categories[category].examples.push({
+		if (exampleGroup in exampleGroups) {
+			exampleGroups[exampleGroup].examples.push({
 				name: sentenceCase(example),
 				slug: example,
 				resolver: resolver as ExampleResolver
 			});
 		} else {
-			categories[category] = {
-				name: kebabCase(category),
-				slug: category,
+			exampleGroups[exampleGroup] = {
+				name: sentenceCase(exampleGroup),
+				slug: exampleGroup,
 				examples: [
 					{
 						name: sentenceCase(example),
@@ -48,23 +48,23 @@ export const getCategories = async (): Promise<Category[]> => {
 	}
 
 	// Transform examples to array
-	let result: Category[] = [];
-	for (const group of Object.values(categories)) {
+	let result: ExampleGroup[] = [];
+	for (const group of Object.values(exampleGroups)) {
 		result.push(group);
 	}
 
 	return result;
 };
 
-export const getExample = async (category: string, slug: string) => {
-	const categories = await getCategories();
+export const getExample = async (ExampleGroup: string, slug: string) => {
+	const exampleGroups = await getExampleGroups();
 
-	const c = categories.find((c) => c.slug === category);
-	if (!c) {
+	const g = exampleGroups.find((g) => g.slug === ExampleGroup);
+	if (!g) {
 		error(404);
 	}
 
-	const e = c.examples.find((e) => e.slug === slug);
+	const e = g.examples.find((e) => e.slug === slug);
 	if (!e) {
 		error(404);
 	}
@@ -72,7 +72,7 @@ export const getExample = async (category: string, slug: string) => {
 	const example: any = await e.resolver();
 
 	return {
-		name: c.name + ' - ' + e.name,
+		name: g.name + ' - ' + e.name,
 		example: example.default
 	};
 };

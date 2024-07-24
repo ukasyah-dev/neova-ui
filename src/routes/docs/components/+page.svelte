@@ -1,1 +1,1 @@
-<p>Components</p>
+<h1>Components</h1>

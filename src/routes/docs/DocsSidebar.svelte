@@ -2,8 +2,10 @@
 	import { page } from '$app/stores';
 	import { Button, CollapsibleMenu } from '$lib';
 	import type { ComponentGroup } from './components/utils';
+	import type { ExampleGroup } from './examples/utils';
 
 	export let componentGroups: ComponentGroup[];
+	export let exampleGroups: ExampleGroup[];
 
 	type GroupedItem = {
 		title: string;
@@ -45,20 +47,17 @@
 		},
 		{
 			title: 'Examples',
-			items: [
-				{
-					title: 'Authentication',
-					items: []
-				},
-				{
-					title: 'Dashboard',
-					items: []
-				},
-				{
-					title: 'E-commerce',
-					items: []
-				}
-			]
+			items: exampleGroups.map((g) => {
+				return {
+					title: g.name,
+					items: g.examples.map((c) => {
+						return {
+							title: c.name,
+							href: `/examples/${g.slug}/${c.slug}`
+						};
+					})
+				};
+			})
 		}
 	];
 </script>

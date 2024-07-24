@@ -1,10 +1,23 @@
 <script lang="ts">
-	import MainHeader from '../../MainHeader.svelte';
-	import type { PageData } from '../../examples/$types';
+	import type { PageData } from './$types';
 
 	export let data: PageData;
 </script>
 
-<MainHeader />
+<h1>Examples</h1>
 
-<pre>{JSON.stringify(data, null, 2)}</pre>
+<p>Here are some examples of how to use Neova UI.</p>
+
+{#each data.exampleGroups as group}
+	<h2>{group.name}</h2>
+
+	<ul>
+		{#each group.examples as example}
+			<li>
+				<a href={`/examples/${group.slug}/${example.slug}`}>
+					{example.name}
+				</a>
+			</li>
+		{/each}
+	</ul>
+{/each}
