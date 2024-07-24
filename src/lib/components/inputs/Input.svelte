@@ -19,8 +19,8 @@
 	<input
 		class={twJoin(
 			size === 'sm' && 'px-4 h-10 text-sm',
-			size === 'md' && 'px-5 h-11 text-base',
-			'w-full rounded-md outline-none',
+			size === 'md' && 'px-4 h-11 text-base',
+			'w-full rounded-md outline-none leading-none',
 			'dark:bg-neutral-700/50 dark:placeholder-neutral-400',
 			'border-0 ring-1 ring-inset ring-neutral-400 dark:ring-neutral-700/80',
 			'focus-within:ring-2 focus-within:ring-inset',

@@ -45,7 +45,7 @@
 					href={item.href}
 					size="sm"
 					variant={active ? 'secondary' : 'transparent'}
-					class={twMerge('w-full', itemClassName)}
+					class={twMerge('w-full justify-start', itemClassName)}
 				>
 					{item.title}
 				</Button>

@@ -15,7 +15,7 @@
 	const { class: className, ...rest } = $$restProps;
 
 	$: _class = twMerge(
-		'font-medium leading-none flex items-center gap-1 rounded-md',
+		'font-medium leading-none flex items-center justify-center gap-1 rounded-md',
 		size === 'sm' && 'px-3.5 h-10 text-sm',
 		size === 'md' && 'px-5 h-11 text-base',
 		variant === 'default' && 'dark:bg-neutral-700/60 dark:text-neutral-200',

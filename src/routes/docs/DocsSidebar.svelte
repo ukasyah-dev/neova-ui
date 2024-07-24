@@ -79,7 +79,7 @@
 					{:else}
 						<Button
 							href={item.href}
-							class="px-2.5 h-9"
+							class="px-2.5 h-9 justify-start"
 							size="sm"
 							variant={active ? 'secondary' : 'transparent'}
 						>
