@@ -10,7 +10,7 @@
 			<div class="flex items-center gap-8">
 				<a href="/docs/introduction" class="dimmed text-sm font-medium">Docs</a>
 				<a href="/" class="dimmed text-sm font-medium">Components</a>
-				<a href="/" class="dimmed text-sm font-medium">Examples</a>
+				<a href="/docs/examples" class="dimmed text-sm font-medium">Examples</a>
 				<a href="/" class="dimmed text-sm font-medium">About</a>
 				<a href="/" class="dimmed text-sm font-medium">Source code</a>
 			</div>

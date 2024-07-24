@@ -15,7 +15,7 @@
 
 		<div class="flex justify-center gap-3">
 			<Button href="/docs/getting-started" variant="primary">Get started</Button>
-			<Button href="/">Browse examples</Button>
+			<Button href="/docs/examples">Browse examples</Button>
 		</div>
 	</div>
 </Container>
